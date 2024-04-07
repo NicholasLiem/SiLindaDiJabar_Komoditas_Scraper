@@ -9,7 +9,7 @@ class AsyncScraper:
     HEADERS = ["commodity_name", "location_id", "commodity_id", "legend", "value", "time", "date"]
 
     async def fetch_data(self, session, commodity_id, location_id):
-        url = f"{self.BASE_URL}/{commodity_id}/{location_id}/day/price/2021-01-01%20%20/2024-04-07/0/market/-/eceran/null"
+        url = f"{self.BASE_URL}/{commodity_id}/{location_id}/week/price/2021-01-01%20%20/2024-04-07/0/market/-/eceran/null"
         try:
             async with session.get(url) as response:
                 if response.status >= 500:
